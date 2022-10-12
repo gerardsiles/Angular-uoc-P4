@@ -1,0 +1,16 @@
+<div class="song-item animated fadeIn" *ngIf="song" (click)="navigate(song)">
+  <div class="song-item__img-container">
+    <img class="song-item__img" [src]="song.cover" alt="song.title" />
+  </div>
+  <div class="song-item__title-container">
+    <h4 class="song-item__title">{{ song.title | uppercase }}</h4>
+  </div>
+  <div class="song-item__bottom-container">
+    <div class="song-item__artists-container">
+      <span class="song-item__artist">{{ song.author }}</span>
+    </div>
+    <div class="song-item__type-container">
+      <p class="song-item__type">{{ song.year }}</p>
+    </div>
+  </div>
+</div>

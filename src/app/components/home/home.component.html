@@ -1,0 +1,7 @@
+<div id="newReleasesId" class="new-releases">
+  <h2 class="new-releases__title">Songs</h2>
+
+  <section class="new-releases__new-releases-section" *ngIf="songs.length > 0">
+    <app-song-item [song]="song" *ngFor="let song of songs"></app-song-item>
+  </section>
+</div>
