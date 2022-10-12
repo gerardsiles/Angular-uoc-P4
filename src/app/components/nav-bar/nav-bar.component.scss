@@ -59,6 +59,9 @@ li.active {
     padding-top: 25px;
 
     background-color: $black;
+
+    position: sticky;
+    top: 0;
   }
 
   &__title {
@@ -113,6 +116,7 @@ li.active {
     @include desktop {
       content: url("/assets/img/home-icon.png");
       margin-right: 15px;
+      
     }
   }
 
