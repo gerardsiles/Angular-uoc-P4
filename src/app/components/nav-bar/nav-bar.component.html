@@ -19,21 +19,19 @@
         <a
           class="aside__list-anchor aside__list-anchor-search"
           routerLink="search"
-          >search works</a
-        >
-      </li>
-      <li class="aside__list-item" routerLinkActive="active">
-        <a
-          class="aside__list-anchor aside__list-anchor-search"
-          routerLink="search"
-          >Player works</a
-        >
+          ><app-search></app-search
+        ></a>
       </li>
     </ul>
   </div>
+
+  <div class="song-player">
+    <app-song [song]="song"></app-song>
+    <app-player></app-player>
+  </div>
 </aside>
 
-<div class="side-bar-btn">
+<!-- <div class="side-bar-btn">
   <div class="side-bar-btn__img-container">
     <img
       class="side-bar-btn__img"
@@ -45,10 +43,10 @@
   <div class="side-bar-btn__btn-container">
     <button class="side-bar-btn__btn" (click)="openOrCloseNav()">☰</button>
   </div>
-</div>
+</div> -->
 
 <!--Display side bar if openSideBar is true-->
-<div
+<!-- <div
   class="side-bar animated fadeIn"
   [ngClass]="openSideBar ? 'side-bar--visible' : 'side-bar--hide'"
 >
@@ -62,8 +60,4 @@
       </li>
     </ul>
   </div>
-</div>
-
-<div class="song-player">
-  <app-song [song]="song"></app-song>
-</div>
+</div> -->
