@@ -22,6 +22,13 @@
           >search works</a
         >
       </li>
+      <li class="aside__list-item" routerLinkActive="active">
+        <a
+          class="aside__list-anchor aside__list-anchor-search"
+          routerLink="search"
+          >Player works</a
+        >
+      </li>
     </ul>
   </div>
 </aside>
@@ -51,8 +58,12 @@
         <a class="side-bar__anchor" routerLink="home">Home</a>
       </li>
       <li class="side-bar__list-item" routerLinkActive="active">
-        <a class="side-bar__anchor" routerLink="search">Search</a>
+        <a class="side-bar__anchor" routerLink="search">Search </a>
       </li>
     </ul>
   </div>
+</div>
+
+<div class="song-player">
+  <app-song [song]="song"></app-song>
 </div>

@@ -9,6 +9,7 @@ import { SongItemComponent } from './components/song-item/song-item.component';
 import { SongComponent } from './components/song/song.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { PlayerComponent } from './components/player/player.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     SongComponent,
     SearchComponent,
     NavBarComponent,
+    PlayerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -12,7 +12,7 @@ import { Song } from './models/Song';
 })
 export class SongComponent implements OnInit {
   public songTitle: string = '';
-  public song: any;
+  @Input() song: Song;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -22,7 +22,6 @@ export class SongComponent implements OnInit {
 
   ngOnInit(): void {
     this.getActivatedRoute();
-    this.getSong();
   }
 
   // get song title from active route
@@ -30,14 +29,6 @@ export class SongComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.songTitle = params['id'];
       console.log('Activated Route Id', params['id']);
-    });
-  }
-
-  // get the song info
-  public getSong(): void {
-    this.songService.getSongs().subscribe((song) => {
-      this.song = song;
-      console.log('Song data:' + song);
     });
   }
 }

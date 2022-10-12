@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { Song } from '../song/models/Song';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-song-item',
@@ -7,9 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./song-item.component.scss'],
 })
 export class SongItemComponent implements OnInit {
-  @Input() song: any;
+  @Input() song: Song;
+  @Output() songItem: Song;
+  @Output() showSong: EventEmitter<Song> = new EventEmitter();
+  public visible: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private uiService: UiService) {}
 
   ngOnInit(): void {}
 
@@ -22,5 +27,19 @@ export class SongItemComponent implements OnInit {
 
     // this.router.navigate(['/artist', songId]);
     this.router.navigate(['/song', songTitle]);
+  }
+
+  // Method using uiService to load the song to be shown on the player
+  renderSong(songItem: Song) {
+    console.log('Emiting event song: ' + JSON.stringify(songItem));
+
+    // this.songItem = songItem;
+    // this.uiService.loadSong(songItem);
+    // this.showSong.emit(songItem);
+    this.uiService.emitSongEvent(songItem);
+  }
+
+  handleShow(event: any) {
+    this.visible = event;
   }
 }

@@ -1,4 +1,4 @@
-<div class="song-item animated fadeIn" *ngIf="song" (click)="navigate(song)">
+<div class="song-item animated fadeIn" (click)="renderSong(song)">
   <div class="song-item__img-container">
     <img class="song-item__img" [src]="song.cover" alt="song.title" />
   </div>

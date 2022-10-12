@@ -9,3 +9,8 @@ export interface Song {
   length: number;
   genre: string;
 }
+
+export interface SongRequest {
+  song: Song;
+  undefined: undefined;
+}
