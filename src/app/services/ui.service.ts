@@ -44,4 +44,12 @@ export class UiService {
   onShow(): Observable<any> {
     return this.subject.asObservable();
   }
+
+  async togglePlay(): Promise<void> {}
+
+  async prevTrack(): Promise<void> {}
+
+  async nextTrack(): Promise<void> {}
+
+  async stop(): Promise<void> {}
 }

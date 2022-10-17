@@ -38,9 +38,10 @@ export class HomeComponent implements OnInit {
       return (this.songs = this.songService.getSongs());
     } else {
       return (this.songs = this.songs.filter((song) => {
-        return song.title
-          .toLowerCase()
-          .startsWith(this.searchTitle.toLowerCase());
+        return (
+          song.title.toLowerCase().startsWith(this.searchTitle.toLowerCase()) ||
+          song.author.toLowerCase().startsWith(this.searchTitle.toLowerCase())
+        );
       }));
     }
   }

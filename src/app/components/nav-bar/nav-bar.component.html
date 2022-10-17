@@ -20,10 +20,9 @@
 
   <div *ngIf="displaySong" class="song-player">
     <app-song [song]="song"></app-song>
-    <app-player></app-player>
+    <app-player [song]="song"></app-player>
   </div>
 </aside>
-
 <!-- <div class="side-bar-btn">
   <div class="side-bar-btn__img-container">
     <img

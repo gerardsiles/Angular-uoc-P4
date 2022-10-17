@@ -1,11 +1,8 @@
 <div class="song-detail" *ngIf="song">
   <img src="{{ song.cover }}" alt="Portada album" />
-  <p>{{ song.title }}</p>
-  <p>Autor: {{ song.author }}</p>
-  <p>Grupo: {{ song.group }}</p>
-  <p>Ano de publicacion: {{ song.year }}</p>
-  <p>Album: {{ song.album }}</p>
-  <p>BPM: {{ song.bpm }}</p>
-  <p>Duracion: {{ song.length }}</p>
-  <p>Genero: {{ song.genre }}</p>
+  <p>
+    {{ song.title }}, Autor: {{ song.author }}, Grupo: {{ song.group }} Ano de
+    publicacion: {{ song.year }}, Album: {{ song.album }}, BPM: {{ song.bpm }},
+    Duracion: {{ song.length }}, Genero: {{ song.genre }}
+  </p>
 </div>
