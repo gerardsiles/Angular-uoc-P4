@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { SONGS } from 'src/assets/dummyData';
 import { Song } from '../components/song/models/Song';
 
 @Injectable({

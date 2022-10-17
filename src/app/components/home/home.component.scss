@@ -36,6 +36,13 @@ $black: black;
     }
   }
 
+  .search-bar {
+    display: flex;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 15px;
+  }
+
   &__new-releases-section {
     @include desktop {
       margin: 0 auto;

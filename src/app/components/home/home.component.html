@@ -1,7 +1,12 @@
 <div id="newReleasesId" class="new-releases">
   <h2 class="new-releases__title">Songs</h2>
-
-  <section class="new-releases__new-releases-section" *ngIf="songs.length > 0">
+  <div class="search-bar">
+    <app-search (search)="filteredSongs($event)"></app-search>
+  </div>
+  <div class="new-releases__new-releases-section">
     <app-song-item [song]="song" *ngFor="let song of songs"></app-song-item>
-  </section>
+    <div class="song-item animated fadeIn" *ngIf="!song">
+      <h3>Ups! no hay ninguna cancion con ese nombre</h3>
+    </div>
+  </div>
 </div>

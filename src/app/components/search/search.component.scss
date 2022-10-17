@@ -1,0 +1,19 @@
+.search-box {
+  display: flex;
+}
+.search-box img {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-right: 5px;
+}
+
+.input {
+  font-weight: 5px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  margin-left: 3px;
+  margin-bottom: 5px;
+  padding: 0 10px;
+}

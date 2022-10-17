@@ -5,7 +5,7 @@
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1920px-Angular_full_color_logo.svg.png"
       alt="angular image"
     />
-    Angular - P1
+    Angular - P2
   </div>
 
   <div class="aside__list-container">
@@ -15,17 +15,10 @@
           >Home</a
         >
       </li>
-      <li class="aside__list-item" routerLinkActive="active">
-        <a
-          class="aside__list-anchor aside__list-anchor-search"
-          routerLink="search"
-          ><app-search></app-search
-        ></a>
-      </li>
     </ul>
   </div>
 
-  <div class="song-player">
+  <div *ngIf="displaySong" class="song-player">
     <app-song [song]="song"></app-song>
     <app-player></app-player>
   </div>

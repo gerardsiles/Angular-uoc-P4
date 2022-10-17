@@ -1,0 +1,57 @@
+[
+  {
+    "title": "For You",
+    "author": "chenda",
+    "cover": "https://linkstorage.linkfire.com/medialinks/images/8c7d194f-5535-4ebd-9f93-857a84ee1700/artwork-440x440.jpg",
+    "group": "NCS",
+    "year": 2022,
+    "album": "For You",
+    "bpm": 160,
+    "length": 269,
+    "genre": "Drum And Bass"
+  },
+  {
+    "title": "Can't You Feel It",
+    "author": "Wiguez, MIDNIGHT CVLT",
+    "cover": "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/200/325x325/cant-you-feel-it-1663671638-WIofNPTdIb.jpg",
+    "group": "Las gallinas turulecas",
+    "year": 2022,
+    "album": "Love",
+    "bpm": 148,
+    "length": 433,
+    "genre": "Drum And Bass"
+  },
+  {
+    "title": "Illusion (feat. Crunr)",
+    "author": "Crunr, BEAUZ",
+    "cover": "     https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/195/325x325/illusion-feat-crunr-1662717639-KnMb0t9YDo.jpg",
+    "group": "BEAUZ",
+    "year": 2022,
+    "album": "Ain't no one",
+    "genre": "Future House",
+    "bpm": 112,
+    "length": 433
+  },
+  {
+    "title": "Somebody Like Me (feat. Halvorsen)",
+    "author": "Halvorsen, Division One, JJD",
+    "cover": "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/171/325x325/somebody-like-me-feat-halvorsen-1659074435-y14oP4hWtW.jpg",
+    "group": "Halvorsen",
+    "year": 2021,
+    "album": "Somebody",
+    "genre": "Melodic Dubstep",
+    "bpm": 68,
+    "length": 270
+  },
+  {
+    "title": "Spirit",
+    "author": "PLEEG",
+    "cover": "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/001/162/325x325/spirit-1657620037-xoCy7z9CVP.jpg",
+    "group": "Pleeg",
+    "year": 2022,
+    "album": "NCS",
+    "genre": "Indie",
+    "bpm": 79,
+    "length": 280
+  }
+]

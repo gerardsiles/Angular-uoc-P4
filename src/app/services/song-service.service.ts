@@ -1,36 +1,51 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { Song } from '../components/song/models/Song';
 
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, filter } from 'rxjs/operators';
 import { SONGS } from 'src/assets/dummyData';
-import { songData } from 'src/assets/songData';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SongServiceService {
+  private songs: Song[] = SONGS;
+  private subject = new Subject<any>();
+
   constructor(private http: HttpClient) {}
 
-  public getSongs() {
-    const url: string = '../../assets/songs.json';
-    return this.http.get(url);
+  public getSongs(): Song[] {
+    return SONGS;
+    // return this.http.get<Song[]>(url);
   }
 
-  // public getSong(id: string): Observable<Song> {
-  //   const url: string = '../../assets/dummyData';
-  //   return this.http.get(url).pipe(
-  //     map((res: Song) => {
-  //       if (!res) {
-  //         throw new Error('Value Expected');
-  //       } else {
-  //         return res;
-  //       }
-  //     }),
-  //     catchError((err) => {
-  //       throw new Error(err.message);
-  //     })
-  //   );
-  // }
+  searchGenre(genre: string) {
+    // const url: string = '../../assets/dummyData.json';
+    // return this.http.get<Song[]>(url)
+    // .pipe(filter((item) => genre === genre));
+    return of(
+      this.getSongs().map(
+        (song) => song.genre.toLowerCase === genre.toLowerCase
+      )
+    );
+  }
+
+  searchTitle(title: string) {
+    console.log('Service title string: ' + title);
+    console.log(this.songs);
+
+    if (this.songs.length === 0 || title === '') {
+      this.songs = this.getSongs();
+    } else {
+      this.songs.filter((song) => {
+        return song.title.toLowerCase().startsWith(title.toLowerCase());
+      });
+    }
+    this.subject.next(this.songs);
+  }
+
+  onSearch(): Observable<any> {
+    return this.subject.asObservable();
+  }
 }
