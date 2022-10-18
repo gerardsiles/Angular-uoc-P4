@@ -26,11 +26,14 @@ export class HomeComponent implements OnInit {
       .subscribe((value) => (this.songs = value));
   }
 
-  public getSongs() {
+  public getSongs(): void {
     this.songs = this.songService.getSongs();
   }
 
   filteredSongs(data: string): Song[] {
+    if (this.searchTitle.length > data.length) {
+      this.songs = this.songService.getSongs();
+    }
     this.searchTitle = data;
     console.log('home data ' + this.searchTitle);
 
@@ -38,6 +41,10 @@ export class HomeComponent implements OnInit {
       return (this.songs = this.songService.getSongs());
     } else {
       return (this.songs = this.songs.filter((song) => {
+        console.log(
+          song.title.toLowerCase().startsWith(this.searchTitle.toLowerCase()) ||
+            song.author.toLowerCase().startsWith(this.searchTitle.toLowerCase())
+        );
         return (
           song.title.toLowerCase().startsWith(this.searchTitle.toLowerCase()) ||
           song.author.toLowerCase().startsWith(this.searchTitle.toLowerCase())

@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
+import { AudioService } from 'src/app/services/audio.service';
 import { MatSliderModule } from '@angular/material/slider';
 import { Song } from '../song/models/Song';
+import { StreamState } from 'src/app/interfaces/stream-state';
 
 @Component({
   selector: 'app-player',
@@ -11,23 +13,34 @@ import { Song } from '../song/models/Song';
 export class PlayerComponent implements OnInit {
   @Input() song: Song;
   public showVolume: boolean = false;
-  public timePlayed: number = 60;
-  public remainingTime: number = 0;
 
-  constructor(private ui: UiService) {}
+  // public track = new Audio();
+  state: StreamState;
+
+  constructor(private ui: UiService, private audioService: AudioService) {
+    this.audioService.getState().subscribe((state) => {
+      this.state = state;
+    });
+  }
 
   ngOnInit(): void {}
 
-  // togglePlay(): void {}
+  playStream() {
+    this.audioService
+      .playStream(this.song.location, this.song.title)
+      .subscribe((events) => {
+        // listening for fun here
+      });
+  }
 
-  // prevTrack(): void {}
+  openFile(song: Song) {
+    this.audioService.stop();
+    this.playStream();
+  }
 
-  // nextTrack(): void {}
-
-  // stop(): void {}
   toggleAudio(): void {
     this.showVolume = !this.showVolume;
-    console.log('audio');
+    console.log('volume');
   }
 
   // Method to transfor the seconds of the song to minutes
@@ -41,15 +54,27 @@ export class PlayerComponent implements OnInit {
     return `${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`;
   }
 
-  // Method to get the remaining time in minutes
-  getRemainingTime(): string {
-    const timeLeft = this.song.length - this.timePlayed;
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
+  togglePlay() {
+    this.audioService.play();
+  }
+  async togglePause(): Promise<void> {
+    this.audioService.pause();
+  }
 
-    function padTo2Digits(num: number) {
-      return num.toString().padStart(2, '0');
-    }
-    return `${padTo2Digits(minutes)}:${padTo2Digits(seconds)}`;
+  continue() {
+    this.audioService.playFrom();
+  }
+
+  toggleStop() {
+    this.audioService.stop();
+  }
+
+  onSliderChangeEnd(change: any) {
+    this.audioService.seekTo(change.value);
+  }
+
+  // change the audio level
+  onVolumeChangeEnd(change: any) {
+    this.audioService.changeVolume(change.value);
   }
 }

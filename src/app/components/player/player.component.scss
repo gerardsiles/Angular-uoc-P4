@@ -1,0 +1,38 @@
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.player-icons {
+  display: flex;
+  align-content: center;
+}
+
+.slider {
+  display: block;
+  align-content: center;
+}
+
+.volume {
+  position: absolute;
+  left: 0;
+
+  justify-content: center;
+  padding: 5;
+  margin: 4;
+}
+
+.volume-slider {
+  margin-left: 5;
+}
+
+.material-icons {
+  height: 48px;
+  width: 48px;
+  font-size: 48px;
+}
+.material-icons:hover {
+  cursor: pointer;
+}

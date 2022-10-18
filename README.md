@@ -1,27 +1,61 @@
-# AngularUocP1
+# AngularUocP2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+Todas las canciones utilizadas son sin copyright, encontradas en ncs.io.
 
-## Development server
+Atribuciones en el formato requerido por ncs.io:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Song: CHENDA - For You [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/CH_ForYou Watch: http://youtu.be/
 
-## Code scaffolding
+Song: MIDNIGHT CVLT & Wiguez - Can't You Feel It [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/CYFI
+Watch: http://youtu.be/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Song: BEAUZ - Illusion (feat. Crunr) [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/
+Watch: http://youtu.be/
 
-## Build
+Song: JJD & Division One - Somebody Like Me (feat. Halvorsen) [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/JJDSomebody
+Watch: http://youtu.be/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Song: PLEEG - Spirit [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/Spirit
+Watch: http://youtu.be/
 
-## Running unit tests
+Song: if found x nøll - die 4 u (feat. damnboy!) [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/die4u Watch: http://youtu.be/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Song: NO QVLT - Neomorph [Arcade Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Neomorph Watch: http://youtu.be/
 
-## Running end-to-end tests
+Song: Almost Weekend & Max Vermeulen - Let Me Go (ft. Jimmy Rivler)[NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/AWLetMeGo
+Watch: http://youtu.be/tDYU3pLd-1I
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Song: Sam Day - Nothing To Hide [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/NothingToHide
+Watch: http://youtu.be/1cELFGPVByU
 
-## Further help
+Song: Tollef - Capsized [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/Capsized
+Watch: http://youtu.be/WVuLOk_djws
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Song: NCT, Shiah Maisel & Too Martian - News To Me [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/NewsToMe
+Watch: http://youtu.be/0B-8QJ3qu8k
+
+Song: Mo Falk & OVSKY - Home [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/MOHome
+Watch: http://youtu.be/0DXI_ooetEo
+
+Song: Elektronomia & RUD - Memory [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/Memory
+Watch: http://youtu.be/EnuGdwI0W1g

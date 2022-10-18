@@ -20,9 +20,15 @@ export class UiService {
     bpm: 160,
     length: 269,
     genre: 'Drum And Bass',
+    location: 'test',
   });
 
-  constructor() {}
+  private _audioElement!: HTMLAudioElement;
+
+  constructor() {
+    const audioElement = document.createElement('audio');
+    this._audioElement = audioElement;
+  }
 
   // communication between song-tiem and player
   emitSongEvent(song: Song) {
@@ -45,11 +51,20 @@ export class UiService {
     return this.subject.asObservable();
   }
 
-  async togglePlay(): Promise<void> {}
+  // Player controls
+  async playSong(song: Song): Promise<void> {
+    this._audioElement.src = song.location;
+    this._audioElement.load();
+    this._audioElement.play();
+  }
 
-  async prevTrack(): Promise<void> {}
+  async togglePlay(): Promise<void> {
+    this._audioElement.play();
+  }
+
+  async togglePause(): Promise<void> {
+    this._audioElement.pause();
+  }
 
   async nextTrack(): Promise<void> {}
-
-  async stop(): Promise<void> {}
 }

@@ -8,6 +8,7 @@ export interface Song {
   bpm: number;
   length: number;
   genre: string;
+  location: string;
 }
 
 export interface SongRequest {

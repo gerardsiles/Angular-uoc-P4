@@ -10,8 +10,9 @@ export const SONGS: Song[] = [
     year: 2022,
     album: 'For You',
     bpm: 160,
-    length: 269,
+    length: 270,
     genre: 'Drum And Bass',
+    location: 'assets/songs/CHENDA - For You [NCS Release].mp3',
   },
   {
     title: "Can't You Feel It",
@@ -24,6 +25,8 @@ export const SONGS: Song[] = [
     bpm: 148,
     length: 433,
     genre: 'Drum And Bass',
+    location:
+      "assets/songs/MIDNIGHT CVLT & Wiguez - Can't You Feel It [NCS Release] (1).mp3",
   },
   {
     title: 'Illusion (feat. Crunr)',
@@ -36,6 +39,8 @@ export const SONGS: Song[] = [
     genre: 'Future House',
     bpm: 112,
     length: 433,
+    location:
+      'assets/songs/BEAUZ - Illusion (feat. Crunr) [NCS Release] (1).mp3',
   },
   {
     title: 'Somebody Like Me (feat. Halvorsen)',
@@ -48,6 +53,8 @@ export const SONGS: Song[] = [
     genre: 'Melodic Dubstep',
     bpm: 68,
     length: 270,
+    location:
+      'assets/songs/JJD & Division One - Somebody Like Me (feat. Halvorsen) [NCS Release] (1).mp3',
   },
   {
     title: 'Spirit',
@@ -60,6 +67,7 @@ export const SONGS: Song[] = [
     genre: 'Indie',
     bpm: 79,
     length: 280,
+    location: 'assets/songs/PLEEG - Spirit [NCS Release].mp3',
   },
   {
     title: 'die 4 u feat. damnboy!',
@@ -72,6 +80,8 @@ export const SONGS: Song[] = [
     genre: 'Trap',
     bpm: 112,
     length: 173,
+    location:
+      'assets/songs/if found x nøll - die 4 u (feat. damnboy!) [NCS Release].mp3',
   },
   {
     title: 'Neomorph',
@@ -84,6 +94,7 @@ export const SONGS: Song[] = [
     genre: 'Drum and Bass',
     bpm: 141,
     length: 158,
+    location: 'assets/songs/NO QVLT - Neomorph [NCS Release].mp3',
   },
   {
     title: 'Let Me Go',
@@ -96,6 +107,8 @@ export const SONGS: Song[] = [
     genre: 'Trap, Electronic',
     bpm: 230,
     length: 160,
+    location:
+      'assets/songs/Almost Weekend & Max Vermeulen - Let Me Go (ft. Jimmy Rivler) [NCS Release].mp3',
   },
   {
     title: 'Nothing To Hide',
@@ -108,6 +121,7 @@ export const SONGS: Song[] = [
     genre: 'Electronic',
     bpm: 199,
     length: 201,
+    location: 'assets/ongs/Sam Day - Nothing To Hide [NCS Release].mp3',
   },
   {
     title: 'Capsized',
@@ -120,6 +134,7 @@ export const SONGS: Song[] = [
     genre: 'House',
     bpm: 312,
     length: 219,
+    location: 'assets/songs/Tollef - Capsized [NCS Release].mp3',
   },
   {
     title: 'News To Me',
@@ -132,6 +147,8 @@ export const SONGS: Song[] = [
     genre: 'Electronic',
     bpm: 356,
     length: 433,
+    location:
+      'assets/songs/NCT, Shiah Maisel & Too Martian - News To Me [NCS Release].mp3',
   },
   {
     title: 'Home',
@@ -144,6 +161,7 @@ export const SONGS: Song[] = [
     genre: 'Future House',
     bpm: 241,
     length: 183,
+    location: 'assets/songs/Mo Falk & OVSKY - Home [NCS Release].mp3',
   },
   {
     title: 'Memory',
@@ -155,7 +173,8 @@ export const SONGS: Song[] = [
     album: 'NCS',
     genre: 'Electronic',
     bpm: 287,
-    length: 235,
+    length: 255,
+    location: 'assets/songs/Elektronomia & RUD - Memory [NCS Release].mp3',
   },
   {
     title: 'Long Night',
@@ -163,10 +182,12 @@ export const SONGS: Song[] = [
     cover:
       'https://linkstorage.linkfire.com/medialinks/images/6a2ef43a-f1c9-4a6b-9efe-b71d22156380/artwork-440x440.jpg',
     group: 'Long Night',
-    year: 2022,
+    year: 2020,
     album: 'NCS',
-    genre: 'House',
+    genre: 'Trap',
     bpm: 412,
     length: 125,
+    location:
+      'assets/songs/JPB - LONG NIGHT (feat. Marvin Divine) [NCS Release].mp3',
   },
 ];

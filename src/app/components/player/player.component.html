@@ -1,31 +1,37 @@
-<div class="player-icons">
-  <mat-icon>skip_previous</mat-icon>
-  <span class="material-icons"> play_arrow </span>
-  <mat-icon>stop</mat-icon>
-  <mat-icon>skip_next</mat-icon>
-  <div class="slider">
-    <mat-slider
-      min="1"
-      max="{{song.length}"
-      step="0.5"
-      value="1.5"
-    ></mat-slider>
-    <div class="song-length">
-      <p>Duracion: {{ getDuracion() }}</p>
-    </div>
-    <div class="song-left">
-      <p>tiempo restante: -{{ getRemainingTime() }}</p>
-    </div>
-
-    <div class="volume" (click)="toggleAudio()">
-      <mat-icon>volume_up</mat-icon>
-      <mat-slider
-        *ngIf="showVolume"
-        min="1"
-        max="5"
-        step="0.5"
-        value="1.5"
-      ></mat-slider>
-    </div>
+<div class="player">
+  <h3 *ngIf="state.playing">Now playing: {{ state.songTitle }}</h3>
+  <div class="player-icons">
+    <span class="material-icons" *ngIf="!state.paused" (click)="playStream()">
+      play_arrow
+    </span>
+    <mat-icon *ngIf="state.playing" (click)="togglePause()">pause</mat-icon>
+    <mat-icon *ngIf="state.paused" (click)="continue()">skip_next</mat-icon>
+    <mat-icon *ngIf="state.playing" (click)="toggleStop()">stop</mat-icon>
   </div>
+
+  <div class="slider">
+    {{ state.readableCurrentTime }}
+    <mat-slider
+      class="volume-slider"
+      min="0"
+      [max]="state.duration"
+      step="1"
+      [value]="state.currentTime"
+      (input)="onSliderChangeEnd($event)"
+    ></mat-slider>
+    {{ state.readableDuration }}
+  </div>
+</div>
+
+<div class="volume" (click)="toggleAudio()">
+  <mat-icon class="volume-icon">volume_up</mat-icon>
+  <mat-slider
+    class="volume-slider"
+    *ngIf="showVolume"
+    min="0"
+    max="1"
+    step="0.1"
+    [value]="state.volume"
+    (input)="onVolumeChangeEnd($event)"
+  ></mat-slider>
 </div>

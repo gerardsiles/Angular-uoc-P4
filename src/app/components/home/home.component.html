@@ -3,10 +3,12 @@
   <div class="search-bar">
     <app-search (search)="filteredSongs($event)"></app-search>
   </div>
+
   <div class="new-releases__new-releases-section">
     <app-song-item [song]="song" *ngFor="let song of songs"></app-song-item>
-    <div class="song-item animated fadeIn" *ngIf="!song">
-      <h3>Ups! no hay ninguna cancion con ese nombre</h3>
+    <!-- Inform if the search is empty -->
+    <div *ngIf="songs.length < 1" class="song-item animated fadeIn">
+      <h3>Ups! no hay ninguna cancion o artista con ese nombre</h3>
     </div>
   </div>
 </div>
