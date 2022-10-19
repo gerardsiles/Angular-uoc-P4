@@ -1,14 +1,13 @@
-<form>
-  <div class="search-box">
-    <img src="/assets/img/search-icon.png" alt="" />
+<mat-form-field class="search-box">
+  <mat-icon>search</mat-icon>
 
-    <input
-      class="input"
-      type="text"
-      name="searchGenre"
-      [(ngModel)]="searchString"
-      (keyup)="filterSongs()"
-      placeholder="Search by title or author"
-    />
-  </div>
-</form>
+  <input
+    matInput
+    class="input"
+    type="text"
+    name="searchGenre"
+    [(ngModel)]="searchString"
+    (keyup)="filterSongs()"
+    placeholder="Search by title or author"
+  />
+</mat-form-field>

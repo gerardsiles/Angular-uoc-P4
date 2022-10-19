@@ -28,7 +28,7 @@ $black: black;
   width: 90vw;
 
   &__title {
-    margin-top: 0px;
+    margin-top: 5px;
     padding-top: 20px;
     padding-left: 18.75px;
 
@@ -38,12 +38,17 @@ $black: black;
     }
   }
 
+  .no-result {
+    margin: auto;
+    text-align: center;
+  }
   .search-bar {
     margin: auto;
     display: flex;
-    width: 50%;
-    // margin-left: 50%;
-    // transform: translateX(-50%);
+    // width: 50%;
+    margin-bottom: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
     // margin-bottom: 15px;
   }
 

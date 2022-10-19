@@ -1,8 +1,8 @@
-<div class="song-detail" *ngIf="song">
+<mat-list-item class="song-detail" *ngIf="song">
   <img src="{{ song.cover }}" alt="Portada album" />
   <p>
     {{ song.title }}, Autor: {{ song.author }}, Grupo: {{ song.group }} Ano de
     publicacion: {{ song.year }}, Album: {{ song.album }}, BPM: {{ song.bpm }},
     Duracion: {{ song.length }}, Genero: {{ song.genre }}
   </p>
-</div>
+</mat-list-item>
