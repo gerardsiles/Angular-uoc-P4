@@ -24,6 +24,8 @@ $black: black;
 // SCSS Styles
 .new-releases {
   background-color: $dark-gray;
+  height: 100vw;
+  width: 90vw;
 
   &__title {
     margin-top: 0px;
@@ -37,10 +39,12 @@ $black: black;
   }
 
   .search-bar {
+    margin: auto;
     display: flex;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 15px;
+    width: 50%;
+    // margin-left: 50%;
+    // transform: translateX(-50%);
+    // margin-bottom: 15px;
   }
 
   &__new-releases-section {
