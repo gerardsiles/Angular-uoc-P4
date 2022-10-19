@@ -5,17 +5,7 @@
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1920px-Angular_full_color_logo.svg.png"
       alt="angular image"
     />
-    Angular - P2
-  </div>
-
-  <div class="aside__list-container">
-    <ul class="aside__list">
-      <li class="aside__list-item" routerLinkActive="active">
-        <a class="aside__list-anchor aside__list-anchor-home" routerLink="home"
-          >Home</a
-        >
-      </li>
-    </ul>
+    Angular - P3
   </div>
 
   <div *ngIf="displaySong" class="song-player">
@@ -23,33 +13,3 @@
     <app-player [song]="song"></app-player>
   </div>
 </aside>
-<!-- <div class="side-bar-btn">
-  <div class="side-bar-btn__img-container">
-    <img
-      class="side-bar-btn__img"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1920px-Angular_full_color_logo.svg.pngg"
-      alt="Angular image"
-    />
-    Angular - P1
-  </div>
-  <div class="side-bar-btn__btn-container">
-    <button class="side-bar-btn__btn" (click)="openOrCloseNav()">☰</button>
-  </div>
-</div> -->
-
-<!--Display side bar if openSideBar is true-->
-<!-- <div
-  class="side-bar animated fadeIn"
-  [ngClass]="openSideBar ? 'side-bar--visible' : 'side-bar--hide'"
->
-  <div>
-    <ul>
-      <li class="side-bar__list-item" routerLinkActive="active">
-        <a class="side-bar__anchor" routerLink="home">Home</a>
-      </li>
-      <li class="side-bar__list-item" routerLinkActive="active">
-        <a class="side-bar__anchor" routerLink="search">Search </a>
-      </li>
-    </ul>
-  </div>
-</div> -->

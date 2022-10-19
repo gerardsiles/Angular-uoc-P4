@@ -1,18 +1,30 @@
 <div class="player">
   <h3 *ngIf="state.playing">Now playing: {{ state.songTitle }}</h3>
   <div class="player-icons">
-    <span class="material-icons" *ngIf="!state.paused" (click)="playStream()">
+    <mat-icon
+      color="accent"
+      class="material-icons"
+      *ngIf="!state.paused"
+      (click)="playStream()"
+    >
       play_arrow
-    </span>
-    <mat-icon *ngIf="state.playing" (click)="togglePause()">pause</mat-icon>
-    <mat-icon *ngIf="state.paused" (click)="continue()">skip_next</mat-icon>
-    <mat-icon *ngIf="state.playing" (click)="toggleStop()">stop</mat-icon>
+    </mat-icon>
+    <mat-icon color="accent" *ngIf="state.playing" (click)="togglePause()"
+      >pause</mat-icon
+    >
+    <mat-icon color="accent" *ngIf="state.paused" (click)="continue()"
+      >skip_next</mat-icon
+    >
+    <mat-icon color="accent" *ngIf="state.playing" (click)="toggleStop()"
+      >stop</mat-icon
+    >
   </div>
 
   <div class="slider">
     {{ state.readableCurrentTime }}
     <mat-slider
       class="volume-slider"
+      color="primary"
       min="0"
       [max]="state.duration"
       step="1"
@@ -24,7 +36,7 @@
 </div>
 
 <div class="volume" (click)="toggleAudio()">
-  <mat-icon class="volume-icon">volume_up</mat-icon>
+  <mat-icon color="accent" class="volume-icon">volume_up</mat-icon>
   <mat-slider
     class="volume-slider"
     *ngIf="showVolume"

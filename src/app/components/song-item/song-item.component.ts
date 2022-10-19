@@ -33,9 +33,6 @@ export class SongItemComponent implements OnInit {
   renderSong(songItem: Song) {
     console.log('Emiting event song: ' + JSON.stringify(songItem));
 
-    // this.songItem = songItem;
-    // this.uiService.loadSong(songItem);
-    // this.showSong.emit(songItem);
     this.uiService.emitSongEvent(songItem);
   }
 
