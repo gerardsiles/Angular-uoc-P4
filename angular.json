@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Angular-uoc-P1:build:production",
+            "firebaseProject": "uoc-angular",
+            "firebaseHostingSite": "uoc-angular"
+          }
         }
       }
     }

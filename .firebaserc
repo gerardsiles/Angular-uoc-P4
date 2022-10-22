@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "uoc-angular": {
+      "hosting": {
+        "uoc-angular": [
+          "uoc-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "uoc-angular"
+  }
+}
