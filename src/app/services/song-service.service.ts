@@ -4,7 +4,13 @@ import { Song } from '../components/song/models/Song';
 
 import { map, catchError, filter } from 'rxjs/operators';
 import { SONGS } from 'src/assets/dummyData';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+import {
+  Firestore,
+  collectionData,
+  collection,
+  doc,
+  updateDoc,
+} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -20,21 +26,10 @@ export class SongServiceService {
     return collectionData(ref, { idField: 'id' }) as Observable<Song[]>;
   }
 
-  searchGenre(genre: string) {
-    return of(
-      SONGS.map((song: Song) => song.genre.toLowerCase === genre.toLowerCase)
-    );
-  }
-
-  searchTitle(title: string) {
-    // if (this.songs.length === 0 || title === '') {
-    //   this.songs = this.getSongs();
-    // } else {
-    //   this.songs.filter((song) => {
-    //     return song.title.toLowerCase().startsWith(title.toLowerCase());
-    //   });
-    // }
-    // this.subject.next(this.songs);
+  async editSongTitle(song: Song) {
+    const ref = doc(this.db, `songs/${song.id}`);
+    console.log(song);
+    return updateDoc(ref, { ...song });
   }
 
   onSearch(): Observable<any> {

@@ -16,16 +16,20 @@
 }
 
 .volume {
-  position: absolute;
-  left: 0;
+  display: inline-block;
 
-  justify-content: center;
+  justify-items: center;
   padding: 5;
   margin: 4;
 }
 
+.volume-icon {
+  transform: scale(0.5);
+}
+
 .volume-slider {
   margin-left: 5;
+  margin-top: 0;
 }
 
 .material-icons {

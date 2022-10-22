@@ -1,12 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SongServiceService } from 'src/app/services/song-service.service';
-import {
-  Firestore,
-  collectionData,
-  collection,
-  getDocs,
-} from '@angular/fire/firestore';
 
 import { Song } from '../song/models/Song';
 
@@ -29,9 +23,6 @@ export class HomeComponent implements OnInit {
     this.songService.getSongs().subscribe((songs) => {
       this.songs = songs;
     });
-    // this.subscription = this.songService
-    //   .onSearch()
-    //   .subscribe((value) => (this.songs = value));
   }
 
   public getSongs(): void {}

@@ -9,7 +9,6 @@ import { SONGS } from 'src/assets/dummyData';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  songs: Song[] = SONGS;
   @Output() searchString: string;
   @Output() filteredSongs: Array<Song> = [];
   // Emit search information to parent container

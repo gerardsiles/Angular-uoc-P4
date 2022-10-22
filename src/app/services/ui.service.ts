@@ -9,6 +9,7 @@ export class UiService {
   private song: Song;
   private subject = new Subject<any>();
   private childClickedSong = new BehaviorSubject<Song>({
+    id: 'random',
     title: 'For You',
     author: 'chenda',
     cover:

@@ -1,6 +1,6 @@
 import { Song } from 'src/app/components/song/models/Song';
 
-export const SONGS: Song[] = [
+export const SONGS = [
   {
     title: 'For You',
     author: 'chenda',
