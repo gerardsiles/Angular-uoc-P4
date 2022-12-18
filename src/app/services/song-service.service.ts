@@ -11,6 +11,7 @@ import {
   doc,
   updateDoc,
 } from '@angular/fire/firestore';
+import { addDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',

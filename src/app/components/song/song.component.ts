@@ -13,6 +13,10 @@ import { Song, SongEdit } from './models/Song';
 })
 export class SongComponent implements OnInit {
   public songTitle: string | null | undefined = '';
+  public songAuthor: string | null | undefined = '';
+  public songGroup: string | null | undefined = '';
+  public songYear: string | null | undefined = '';
+  public songAlbum: string | null | undefined = '';
   public editable: boolean = false;
   public editableTitle: boolean = false;
   public editableAuthor: boolean = false;
@@ -60,12 +64,10 @@ export class SongComponent implements OnInit {
     // change edit option
     if (this.editable) {
       this.songSection.get('title')?.disable();
-      this.editable = false;
       this.editableTitle = !this.editableTitle;
       this.cancel();
     } else {
       this.songSection.get('title')?.enable();
-      this.editable = true;
       this.editableTitle = !this.editableTitle;
     }
   }
@@ -73,12 +75,10 @@ export class SongComponent implements OnInit {
     // change edit option
     if (this.editable) {
       this.songSection.get('author')?.disable();
-      this.cancel();
-      this.editable = false;
       this.editableAuthor = !this.editableAuthor;
+      this.cancel();
     } else {
       this.songSection.get('author')?.enable();
-      this.editable = true;
       this.editableAuthor = !this.editableAuthor;
     }
   }
@@ -86,12 +86,10 @@ export class SongComponent implements OnInit {
     // change edit option
     if (this.editable) {
       this.songSection.get('group')?.disable();
-      this.cancel();
-      this.editable = false;
       this.editableGroup = !this.editableGroup;
+      this.cancel();
     } else {
       this.songSection.get('group')?.enable();
-      this.editable = true;
       this.editableGroup = !this.editableGroup;
     }
   }
@@ -99,12 +97,10 @@ export class SongComponent implements OnInit {
     // change edit option
     if (this.editable) {
       this.songSection.get('year')?.disable();
-      this.cancel();
-      this.editable = false;
       this.editableYear = !this.editableYear;
+      this.cancel();
     } else {
       this.songSection.get('year')?.enable();
-      this.editable = true;
       this.editableYear = !this.editableYear;
     }
   }
@@ -112,12 +108,10 @@ export class SongComponent implements OnInit {
     // change edit option
     if (this.editable) {
       this.songSection.get('album')?.disable();
-      this.cancel();
-      this.editable = false;
       this.editableAlbum = !this.editableAlbum;
+      this.cancel();
     } else {
       this.songSection.get('album')?.enable();
-      this.editable = true;
       this.editableAlbum = !this.editableAlbum;
     }
   }
@@ -174,12 +168,15 @@ export class SongComponent implements OnInit {
     }
     if (this.songSection.get('author')?.touched) {
       this.songSection.get('author')?.setValue('');
+      this.editableAuthor = !this.editableAuthor;
     }
     if (this.songSection.get('group')?.touched) {
       this.songSection.get('group')?.setValue('');
+      this.editableGroup = !this.editableGroup;
     }
     if (this.songSection.get('year')?.touched) {
       this.songSection.get('year')?.setValue('');
+      this.editableYear = !this.editableYear;
     }
     if (this.songSection.get('album')?.touched) {
       this.songSection.get('album')?.setValue('');

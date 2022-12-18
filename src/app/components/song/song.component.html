@@ -32,16 +32,18 @@
         type="text"
         formControlName="author"
         placeholder="{{ song.author }}"
+        [disabled]="editable"
+        required
       />
       <mat-icon
         color="{{ editableAuthor ? 'accent' : 'primary' }}"
         (click)="editSongAuthor()"
         >edit</mat-icon
       >
-      <p *ngIf="author && author.invalid && editableAuthor" class="error">
-        can't be empty
-      </p>
     </div>
+    <p *ngIf="author && author.invalid && editableAuthor" class="error">
+      can't be empty
+    </p>
 
     <div class="section">
       <p>Grupo:</p>
@@ -56,10 +58,10 @@
         (click)="editSongGroup()"
         >edit</mat-icon
       >
-      <p *ngIf="group && group.invalid && editableGroup" class="error">
-        can't be empty
-      </p>
     </div>
+    <p *ngIf="group && group.invalid && editableGroup" class="error">
+      can't be empty
+    </p>
 
     <div class="section">
       <p>Ano:</p>
@@ -74,10 +76,10 @@
         (click)="editSongYear()"
         >edit</mat-icon
       >
-      <p *ngIf="year && year.invalid && editableYear" class="error">
-        can't be empty
-      </p>
     </div>
+    <p *ngIf="year && year.invalid && editableYear" class="error">
+      can't be empty
+    </p>
 
     <div class="section">
       <p>Album:</p>
@@ -92,10 +94,10 @@
         (click)="editSongAlbum()"
         >edit</mat-icon
       >
-      <p *ngIf="album && album.invalid && editableAlbum" class="error">
-        can't be empty
-      </p>
     </div>
+    <p *ngIf="album && album.invalid && editableAlbum" class="error">
+      can't be empty
+    </p>
 
     <div class="section"></div>
     <p>BPM: {{ song.bpm }}</p>
@@ -105,7 +107,9 @@
 </form>
 
 <button
-  *ngIf="editable && title?.valid"
+  *ngIf="
+    title?.valid || author?.valid || group?.valid || year?.valid || album?.valid
+  "
   mat-raised-button
   color="primary"
   class="btn"
@@ -114,7 +118,13 @@
   Confirmar cambios
 </button>
 <button
-  *ngIf="editable"
+  *ngIf="
+    editableTitle ||
+    editableAuthor ||
+    editableGroup ||
+    editableYear ||
+    editableAlbum
+  "
   mat-raised-button
   color="primary"
   class="btn"
