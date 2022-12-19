@@ -7,9 +7,9 @@ import { SongServiceService } from 'src/app/services/song-service.service';
 import { Song, SongEdit } from './models/Song';
 
 @Component({
-  selector: 'app-song',
-  templateUrl: './song.component.html',
-  styleUrls: ['./song.component.scss'],
+  selector: 'app-song-detail',
+  templateUrl: './song-detail.component.html',
+  styleUrls: ['./song-detail.component.scss'],
 })
 export class SongComponent implements OnInit {
   public songTitle: string | null | undefined = '';

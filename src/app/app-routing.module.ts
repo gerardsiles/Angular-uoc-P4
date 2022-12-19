@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { SongComponent } from './components/song/song.component';
+import { SongListComponent } from './components/song-list/song-list.component';
+import { SongComponent } from './components/song-detail/song-detail.component';
 
 const routes: Routes = [
   {
     // default route => /home
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'song-list',
     pathMatch: 'full',
   },
   {
     // route => /home/language
-    path: 'home',
-    component: HomeComponent,
+    path: 'song-list',
+    component: SongListComponent,
   },
   {
     path: 'songs/:id',

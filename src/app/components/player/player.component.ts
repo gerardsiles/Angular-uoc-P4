@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { AudioService } from 'src/app/services/audio.service';
 import { MatSliderModule } from '@angular/material/slider';
-import { Song } from '../song/models/Song';
+import { Song } from '../song-detail/models/Song';
 import { StreamState } from 'src/app/interfaces/stream-state';
 
 @Component({
@@ -28,9 +28,7 @@ export class PlayerComponent implements OnInit {
   playStream() {
     this.audioService
       .playStream(this.song.location, this.song.title)
-      .subscribe((events) => {
-        // listening for fun here
-      });
+      .subscribe((events) => {});
   }
 
   openFile(song: Song) {
@@ -40,7 +38,6 @@ export class PlayerComponent implements OnInit {
 
   toggleAudio(): void {
     this.showVolume = !this.showVolume;
-    console.log('volume');
   }
 
   // Method to transfor the seconds of the song to minutes

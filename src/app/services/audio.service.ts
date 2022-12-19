@@ -16,6 +16,7 @@ export class AudioService {
     paused: false,
     readableCurrentTime: '',
     readableDuration: '',
+    readableTimeLeft: '',
     duration: undefined,
     currentTime: undefined,
     volume: 0.8,
@@ -57,6 +58,7 @@ export class AudioService {
       return () => {
         // Stop Playing
         this.audioObj.pause();
+        this.state.playing = false;
         this.audioObj.currentTime = 0;
         // remove event listeners
         this.removeEvents(this.audioObj, this.audioEvents, handler);
@@ -80,6 +82,7 @@ export class AudioService {
 
   playStream(url: string, songTitle: string) {
     this.state.songTitle = songTitle;
+    this.state.paused = false;
     return this.streamObservable(url).pipe(takeUntil(this.stop$));
   }
 
@@ -88,11 +91,18 @@ export class AudioService {
       case 'canplay':
         this.state.duration = this.audioObj.duration;
         this.state.readableDuration = this.formatTime(this.state.duration);
+        this.state.readableTimeLeft = this.formatTime(
+          this.state.duration - this.audioObj.currentTime
+        );
         this.state.canplay = true;
         break;
       case 'playing':
         this.state.playing = true;
+        this.state.readableTimeLeft = this.formatTime(
+          this.audioObj.duration - this.audioObj.currentTime
+        );
         break;
+
       case 'pause':
         this.state.playing = false;
         break;
@@ -100,6 +110,9 @@ export class AudioService {
         this.state.currentTime = this.audioObj.currentTime;
         this.state.readableCurrentTime = this.formatTime(
           this.state.currentTime
+        );
+        this.state.readableTimeLeft = this.formatTime(
+          this.audioObj.duration - this.audioObj.currentTime
         );
         break;
       case 'volume':
@@ -124,6 +137,7 @@ export class AudioService {
       paused: false,
       readableCurrentTime: '',
       readableDuration: '',
+      readableTimeLeft: '',
       duration: undefined,
       currentTime: undefined,
       volume: 0.8,

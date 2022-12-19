@@ -12,9 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { SongListComponent } from './components/song-list/song-list.component';
 import { SongItemComponent } from './components/song-item/song-item.component';
-import { SongComponent } from './components/song/song.component';
+import { SongComponent } from './components/song-detail/song-detail.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PlayerComponent } from './components/player/player.component';
@@ -28,7 +28,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    SongListComponent,
     SongItemComponent,
     SongComponent,
     SearchComponent,

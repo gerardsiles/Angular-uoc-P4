@@ -1,4 +1,4 @@
-import { Song } from 'src/app/components/song/models/Song';
+import { Song } from 'src/app/components/song-detail/models/Song';
 
 export const SONGS = [
   {

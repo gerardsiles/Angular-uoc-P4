@@ -1,0 +1,32 @@
+<div id="newReleasesId" class="new-releases">
+  <h2 class="new-releases__title">Songs</h2>
+  <div class="search-bar">
+    <mat-icon>search</mat-icon>
+    <app-search (search)="filteredSongs($event)"></app-search>
+  </div>
+
+  <!-- Search Result -->
+  <div class="" *ngIf="searchResult.length > 0 && searching">
+    <h3 class="animated fadein results">Results</h3>
+    <mat-list class="new-releases__new-releases-section">
+      <app-song-item
+        [song]="song"
+        *ngFor="let song of searchResult"
+      ></app-song-item>
+    </mat-list>
+  </div>
+
+<!-- Inform if the search is empty -->
+<div
+*ngIf="searchResult.length < 1 && searching"
+class="song-item animated fadeIn"
+>
+<h3 class="no-result">
+  Ups! no hay ninguna cancion o artista con ese nombre
+</h3>
+</div>
+<mat-list class="new-releases__new-releases-section">
+<app-song-item [song]="song" *ngFor="let song of songs"></app-song-item>
+<!-- Inform if the search is empty -->
+</mat-list>
+</div>

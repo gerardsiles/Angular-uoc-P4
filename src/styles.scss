@@ -196,6 +196,14 @@ hr {
 
 .fadeIn {
   animation-name: fadeIn;
+  margin-top: 5px;
+  padding-top: 20px;
+  padding-left: 18.75px;
+
+    @include desktop {
+      width: 500px;
+      margin-left: 5%;
+    }
 }
 
 html,

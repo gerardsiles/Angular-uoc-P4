@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { Song } from '../song/models/Song';
+import { Song } from '../song-detail/models/Song';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({

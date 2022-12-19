@@ -4,12 +4,13 @@
 }
 
 .song-detail img {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 245px;
+  max-height: 245px;
+  margin-top: 8vmax;
 }
 
-.song-detail p {
-  font-size: 12px;
+.song-detail-container p {
+  font-size: 13px;
   margin: 0;
   padding: 0;
   margin-left: 17px;
@@ -19,6 +20,7 @@ input[type="text"] {
   background: transparent;
   border: none;
   color: #fff;
+  margin-top: 1vmax;
 }
 
 ::placeholder {

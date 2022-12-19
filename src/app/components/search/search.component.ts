@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-import { Song } from '../song/models/Song';
+import { Song } from '../song-detail/models/Song';
 import { SONGS } from 'src/assets/dummyData';
 
 @Component({
