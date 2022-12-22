@@ -17,7 +17,7 @@
     >
   </div>
 
-  <div class="slider">
+  <div *ngIf="state.playing || state.paused" class="slider">
     {{ state.readableCurrentTime }}
     <mat-slider
       class="volume-slider"
