@@ -25,6 +25,11 @@ import { environment } from '../environments/environment';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
+import { AddSongComponent } from './components/add-song/add-song.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +39,10 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     SearchComponent,
     NavBarComponent,
     PlayerComponent,
+    AddSongComponent,
   ],
   imports: [
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -47,6 +54,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatProgressBarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),

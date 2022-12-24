@@ -6,6 +6,16 @@
       alt="angular image"
     />
     Angular - P4
+    <div class="add-song">
+      <p (click)="openDialog('0ms', '0ms')">Add Song</p>
+
+      <mat-icon
+        (click)="openDialog('0ms', '0ms')"
+        color="accent"
+        class="add-song-item"
+        >add</mat-icon
+      >
+    </div>
   </div>
 
   <div *ngIf="displaySong" class="song-player">

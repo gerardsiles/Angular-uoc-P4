@@ -51,6 +51,24 @@ li.active {
   color: white;
 }
 
+.add-song {
+  display: flex;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.add-song:hover {
+  cursor: pointer;
+}
+
+.add-song p {
+}
+
+.add-song-item {
+}
+
 /* Desktop Aside */
 
 .aside {

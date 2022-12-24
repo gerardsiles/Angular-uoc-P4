@@ -1,3 +1,5 @@
+import { FormControl } from '@angular/forms';
+
 export interface Song {
   id: String;
   title: string;
@@ -29,4 +31,17 @@ export class SongEdit {
   length: number | null | undefined;
   genre: string | null | undefined;
   location: string | null | undefined;
+}
+export class AddSong {
+  id: String;
+  title: FormControl<string | null>;
+  author: FormControl<string | null>;
+  cover: string;
+  group: FormControl<string | null>;
+  year: FormControl<number | null>;
+  album: FormControl<string | null>;
+  bpm: FormControl<number | null>;
+  length: FormControl<number | null>;
+  genre: FormControl<string | null>;
+  location: string;
 }

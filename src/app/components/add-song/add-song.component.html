@@ -1,0 +1,87 @@
+<form [formGroup]="newSongSection">
+  <div class="input-fields">
+    <p>Add your own song!</p>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput [formControl]="title" autocomplete="off" />
+      <mat-error *ngIf="title.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Author</mat-label>
+      <input matInput [formControl]="author" autocomplete="off" />
+      <mat-error *ngIf="author.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Group</mat-label>
+      <input matInput [formControl]="group" autocomplete="off" />
+      <mat-error *ngIf="group.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Album</mat-label>
+      <input matInput [formControl]="album" autocomplete="off" />
+      <mat-error *ngIf="album.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Year</mat-label>
+      <input matInput [formControl]="year" autocomplete="off" />
+      <mat-error *ngIf="year.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>BPM</mat-label>
+      <input matInput [formControl]="bpm" autocomplete="off" />
+      <mat-error *ngIf="bpm.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Length</mat-label>
+      <input matInput [formControl]="length" autocomplete="off" />
+      <mat-error *ngIf="length.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Genre</mat-label>
+      <input matInput [formControl]="genre" autocomplete="off" />
+      <mat-error *ngIf="genre.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="input-area">
+    <button type="button" mat-raised-button (click)="fileInput.click()">
+      Choose File
+    </button>
+    <input
+      hidden
+      (change)="onFileSelected($event)"
+      #fileInput
+      type="file"
+      accept="image/png, image/jpeg, image/jpg"
+      id="file"
+    />
+    <mat-label>Song cover(png, jpeg)</mat-label>
+  </div>
+  <mat-progress-bar mode="buffer" [value]="fileProgress"></mat-progress-bar>
+  <div class="input-area">
+    <button type="button" mat-raised-button (click)="songInput.click()">
+      Choose File
+    </button>
+    <input
+      hidden
+      (change)="onSongSelected($event)"
+      #songInput
+      type="file"
+      accept="audio/mp3, audio/*"
+      id="file"
+    />
+    <mat-label>Song .mp3</mat-label>
+  </div>
+  <mat-progress-bar mode="buffer" [value]="songProgress"></mat-progress-bar>
+  <div class="submit">
+    <button mat-raised-button color="primary" (click)="onAddSong()">
+      Submit
+    </button>
+  </div>
+</form>

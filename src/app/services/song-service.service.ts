@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-import { Song } from '../components/song-detail/models/Song';
+import { AddSong, Song } from '../components/song-detail/models/Song';
 
-import { map, catchError, filter } from 'rxjs/operators';
-import { SONGS } from 'src/assets/dummyData';
 import {
   Firestore,
   collectionData,
@@ -11,7 +9,7 @@ import {
   doc,
   updateDoc,
 } from '@angular/fire/firestore';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, setDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -27,9 +25,25 @@ export class SongServiceService {
     return collectionData(ref, { idField: 'id' }) as Observable<Song[]>;
   }
 
+  async addNewSong(song: AddSong) {
+    console.log('adding song: ' + song);
+    const ref = doc(this.db, 'songs');
+    // Generate a random number between 1 and 1000
+    const randomNumber = Math.floor(Math.random() * 1000) + 1;
+
+    // Convert the number to a string and add a prefix
+    const id = 'ID-' + randomNumber.toString();
+    return addDoc(collection(this.db, 'songs'), song)
+      .then((docRef) => {
+        console.log('Document written with ID: ', docRef.id);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   async editSongTitle(song: Song) {
     const ref = doc(this.db, `songs/${song.id}`);
-    console.log(song);
     return updateDoc(ref, { ...song });
   }
 
