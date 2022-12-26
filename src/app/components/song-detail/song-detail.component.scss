@@ -1,5 +1,5 @@
 .song-detail {
-  padding: 5px;
+  padding: 3px;
   margin-top: 10px;
 }
 
@@ -21,31 +21,59 @@ input[type="text"] {
   border: none;
   color: #fff;
   margin-top: 1vmax;
+  
 }
 
 ::placeholder {
   color: #fff;
 }
 
-.section {
-  margin: 0 auto;
+.sections {
   display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:flex-start;
+  margin-left: 5px;
+  height:24px;
+  input {
+    margin: 0;
+    max-width:100px;
+  }
+  p {
+    margin: 0;
+    width:60px;
+  }
+  mat-icon {
+    margin: 0 10px;
+    transform: scale(0.7);
+  }
+}
+
+/*.section {
+ //  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   padding: 1px;
 }
 
 .section input {
-  margin-top: 3px;
-}
-.section p {
-  align-items: center;
-  align-content: center;
+ //  margin-top: 3px;
+ margin:0;
+ padding: 0;
+}*/
+.sections p {
+ // align-items: center;
+  //align-content: center;
   margin-right: 5px;
+  margin:0;
+  padding: 0;
+  margin-left: 5px;
 }
-
+/*
 .section mat-icon {
-  position: absolute;
+ //  position: absolute;
   left: 0px;
   transform: scale(0.7);
   margin-right: 8px;
@@ -53,8 +81,7 @@ input[type="text"] {
 
 .section mat-icon:hover {
   cursor: pointer;
-}
-
+} */
 .input {
   width: auto;
   font-weight: 5px;
@@ -62,8 +89,8 @@ input[type="text"] {
   outline: none;
   border-radius: 25px;
   margin-left: 3px;
-  margin-bottom: 5px;
-  padding: 0 10px;
+ // margin-bottom: 5px;
+ // padding: 0 10px;
   align-items: center;
   align-content: center;
 }
