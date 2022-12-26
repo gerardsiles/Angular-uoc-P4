@@ -34,14 +34,14 @@ export class SongEdit {
 }
 export class AddSong {
   id: String;
-  title: FormControl<string | null>;
-  author: FormControl<string | null>;
+  title: String | null;
+  author: String | null;
   cover: string;
-  group: FormControl<string | null>;
-  year: FormControl<number | null>;
-  album: FormControl<string | null>;
-  bpm: FormControl<number | null>;
-  length: FormControl<number | null>;
-  genre: FormControl<string | null>;
+  group: String | null;
+  year: number | null;
+  album: String | null;
+  bpm: number | null;
+  length: number | null;
+  genre: String | null;
   location: string;
 }

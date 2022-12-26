@@ -61,9 +61,18 @@
       accept="image/png, image/jpeg, image/jpg"
       id="file"
     />
-    <mat-label>Song cover(png, jpeg)</mat-label>
+    <mat-label>{{ fileName ? fileName : "Song cover(png, jpeg)" }} </mat-label>
   </div>
-  <mat-progress-bar mode="buffer" [value]="fileProgress"></mat-progress-bar>
+  <div class="progressbar">
+    <mat-progress-bar
+      *ngIf="fileProgress"
+      mode="buffer"
+      [value]="fileProgress"
+    ></mat-progress-bar>
+    <mat-icon *ngIf="fileProgress === 100" class="green-check"
+      >check_circle</mat-icon
+    >
+  </div>
   <div class="input-area">
     <button type="button" mat-raised-button (click)="songInput.click()">
       Choose File
@@ -76,12 +85,24 @@
       accept="audio/mp3, audio/*"
       id="file"
     />
-    <mat-label>Song .mp3</mat-label>
+    <mat-label>{{ songName ? songName : "Song .mp3" }}</mat-label>
   </div>
-  <mat-progress-bar mode="buffer" [value]="songProgress"></mat-progress-bar>
+  <div class="progressbar">
+    <mat-progress-bar
+      *ngIf="songProgress"
+      mode="buffer"
+      [value]="songProgress"
+    ></mat-progress-bar>
+    <mat-icon *ngIf="songProgress === 100" class="green-check"
+      >check_circle</mat-icon
+    >
+  </div>
   <div class="submit">
     <button mat-raised-button color="primary" (click)="onAddSong()">
       Submit
+    </button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">
+      Cancel
     </button>
   </div>
 </form>

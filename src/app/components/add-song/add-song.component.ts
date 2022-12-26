@@ -11,11 +11,10 @@ import {
   getDownloadURL,
   getStorage,
   ref,
-  uploadBytes,
   uploadBytesResumable,
 } from 'firebase/storage';
 import { SongServiceService } from 'src/app/services/song-service.service';
-import { AddSong } from '../song-detail/models/Song';
+import { AddSong, Song } from '../song-detail/models/Song';
 
 @Component({
   selector: 'app-add-song',
@@ -29,6 +28,7 @@ export class AddSongComponent implements OnInit {
   public songGroup: string;
   public songYear: string;
   public songAlbum: string;
+
   title = new FormControl<string>('', [Validators.required]);
   author = new FormControl<string>('', [Validators.required]);
   group = new FormControl<string>('', [Validators.required]);
@@ -39,7 +39,9 @@ export class AddSongComponent implements OnInit {
   genre = new FormControl<string>('', [Validators.required]);
 
   fileProgress: number = 0;
+  fileName: string = '';
   songProgress: number = 0;
+  songName: string = '';
   coverURL: string = '';
   songURL: string = '';
 
@@ -82,7 +84,8 @@ export class AddSongComponent implements OnInit {
 
   onFileSelected(event: any) {
     const file = event.target.files[0];
-    console.log(file.name);
+    this.fileName = file.name;
+    console.log(this.fileName);
     const storage = getStorage();
     const fileRef = ref(storage, `images/${file.name}`);
     const uploadTask = uploadBytesResumable(fileRef, file);
@@ -131,8 +134,9 @@ export class AddSongComponent implements OnInit {
     );
   }
 
+  // Add a new song to Firestore
   onAddSong() {
-    console.log('in');
+    // Chef if errors
     if (
       !this.title.invalid &&
       !this.author.invalid &&
@@ -144,21 +148,25 @@ export class AddSongComponent implements OnInit {
       this.fileProgress === 100 &&
       this.songProgress === 100
     ) {
+      // Build the new song object
       const song: AddSong = {
         id: '',
-        title: this.title,
-        author: this.author,
-        group: this.group,
-        album: this.album,
-        bpm: this.bpm,
-        length: this.length,
-        genre: this.genre,
+        title: this.title.value,
+        author: this.author.value,
+        group: this.group.value,
+        album: this.album.value,
+        bpm: this.bpm.value,
+        length: this.length.value,
+        genre: this.genre.value,
         cover: this.coverURL,
-        year: this.year,
+        year: this.year.value,
         location: this.songURL,
       };
-      console.log('adding song');
-      this.songService.addNewSong(song);
+      // Call teh service to add the song
+      this.songService.addNewSong(song, this.coverURL, this.songURL);
     }
   }
+
+  // Close de Modal
+  onCancel() {}
 }
