@@ -34,14 +34,28 @@ export class SongEdit {
 }
 export class AddSong {
   id: String;
-  title: String | null;
-  author: String | null;
+  title: String | null | undefined;
+  author: String | undefined;
   cover: string;
-  group: String | null;
+  group: String | undefined;
   year: number | null;
-  album: String | null;
+  album: String | undefined;
   bpm: number | null;
   length: number | null;
-  genre: String | null;
+  genre: String | undefined;
+  location: string;
+}
+
+export class SearchResult {
+  id: String;
+  title: String | null | undefined;
+  author: String | undefined;
+  cover: string;
+  group: String | undefined;
+  year: number | null;
+  album: String | undefined;
+  bpm: number | null;
+  length: number | null;
+  genre: String | undefined;
   location: string;
 }

@@ -16,7 +16,7 @@ export class SongListComponent implements OnInit {
   public searchResult: Song[] = [];
   searchTitle: string = '';
   searching: boolean = false;
-
+  timeout: any = 0;
   subscription: Subscription;
 
   constructor(private songService: SongServiceService) {}
@@ -30,29 +30,30 @@ export class SongListComponent implements OnInit {
   }
 
   filteredSongs(searchTerm: string) {
-    this.searching = true;
-    if (searchTerm.length === 0) {
-      this.searching = false;
-    }
-    // Resetear la busqueda al borrar caracter
-    if (this.searchTitle.length > searchTerm.length) {
-      this.searchResult = this.searchSongs(searchTerm);
-    }
-    this.searchTitle = searchTerm;
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.searching = true;
+      if (searchTerm.length === 0) {
+        this.searching = false;
+      }
+      // Resetear la busqueda al borrar caracter
+      if (this.searchTitle.length > searchTerm.length) {
+        this.searchSongs(searchTerm);
+      } else {
+        // Launch search with params
+        this.searchTitle = searchTerm;
 
-    if (searchTerm) {
-      // this.songService.search(song).subscribe((songs) => (this.songs = songs));
-      this.searchResult = this.searchSongs(searchTerm);
-    } else {
-      return this.getSongs();
-    }
+        if (searchTerm) {
+          this.searchSongs(searchTerm);
+        }
+      }
+    }, 200);
   }
 
-  searchSongs(searchTerm: string) {
-    return this.songs.filter(
-      (song) =>
-        song.title.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
-        song.author.toLowerCase().startsWith(searchTerm.toLowerCase())
-    );
+  async searchSongs(searchTerm: string) {
+    this.searchResult = [];
+
+    this.searchResult = await this.songService.searchSong(searchTerm);
+    console.log(JSON.stringify(this.searchResult));
   }
 }

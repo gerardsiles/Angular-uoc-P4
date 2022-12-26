@@ -139,19 +139,19 @@ export class SongComponent implements OnInit {
 
     // Check if values to be updated
     if (this.songSection.get('title')?.dirty) {
-      newSongInfo.title = this.songSection.get('title')?.value;
+      newSongInfo.title = this.songSection.get('title')?.value?.toLowerCase();
     }
     if (this.songSection.get('author')?.dirty) {
-      newSongInfo.author = this.songSection.get('author')?.value;
+      newSongInfo.author = this.songSection.get('author')?.value?.toLowerCase();
     }
     if (this.songSection.get('group')?.dirty) {
-      newSongInfo.group = this.songSection.get('group')?.value;
+      newSongInfo.group = this.songSection.get('group')?.value?.toLowerCase();
     }
     if (this.songSection.get('year')?.dirty) {
       newSongInfo.year = Number(this.songSection.get('year')?.value);
     }
     if (this.songSection.get('album')?.dirty) {
-      newSongInfo.album = this.songSection.get('album')?.value;
+      newSongInfo.album = this.songSection.get('album')?.value?.toLowerCase();
     }
 
     // call the service to edit

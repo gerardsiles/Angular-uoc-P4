@@ -85,7 +85,6 @@ export class AddSongComponent implements OnInit {
   onFileSelected(event: any) {
     const file = event.target.files[0];
     this.fileName = file.name;
-    console.log(this.fileName);
     const storage = getStorage();
     const fileRef = ref(storage, `images/${file.name}`);
     const uploadTask = uploadBytesResumable(fileRef, file);
@@ -104,6 +103,9 @@ export class AddSongComponent implements OnInit {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           this.coverURL = downloadURL;
           console.log('File available at', downloadURL);
+          this.songService.notification$.next(
+            `Cover available at ${downloadURL}`
+          );
         });
       }
     );
@@ -128,6 +130,9 @@ export class AddSongComponent implements OnInit {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           this.songURL = downloadURL;
+          this.songService.notification$.next(
+            `Song available at ${downloadURL}`
+          );
           console.log('Song available at', downloadURL);
         });
       }
@@ -151,19 +156,20 @@ export class AddSongComponent implements OnInit {
       // Build the new song object
       const song: AddSong = {
         id: '',
-        title: this.title.value,
-        author: this.author.value,
-        group: this.group.value,
-        album: this.album.value,
+        title: this.title.value?.toLowerCase(),
+        author: this.author.value?.toLowerCase(),
+        group: this.group.value?.toLowerCase(),
+        album: this.album.value?.toLowerCase(),
         bpm: this.bpm.value,
         length: this.length.value,
-        genre: this.genre.value,
+        genre: this.genre.value?.toLowerCase(),
         cover: this.coverURL,
         year: this.year.value,
         location: this.songURL,
       };
       // Call teh service to add the song
       this.songService.addNewSong(song, this.coverURL, this.songURL);
+      this.dialogRef.close();
     }
   }
 

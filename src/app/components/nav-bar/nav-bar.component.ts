@@ -29,6 +29,11 @@ export class NavBarComponent implements OnInit {
     });
   }
 
+  // Close the add song modal
+  closeDialog(): void {
+    this.dialog.closeAll;
+  }
+
   ngOnInit(): void {
     this.uiService.songEventListener().subscribe((song) => {
       this.song = song;
