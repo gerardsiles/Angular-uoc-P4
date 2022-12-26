@@ -2,7 +2,8 @@
   <mat-list-item class="song-detail" *ngIf="song">
     <img src="{{ song.cover }}" alt="Portada album" />
 
-    <div class="section">
+    <div class="sections">
+      
       <p>Titulo:</p>
 
       <input
@@ -25,7 +26,7 @@
       can't be empty
     </p>
 
-    <div class="section">
+    <div class="sections">
       <p>Autor:</p>
       <input
         class="input"
@@ -45,7 +46,7 @@
       can't be empty
     </p>
 
-    <div class="section">
+    <div class="sections">
       <p>Grupo:</p>
       <input
         class="input"
@@ -63,7 +64,7 @@
       can't be empty
     </p>
 
-    <div class="section">
+    <div class="sections">
       <p>Ano:</p>
       <input
         class="input"
@@ -81,7 +82,7 @@
       can't be empty
     </p>
 
-    <div class="section">
+    <div class="sections">
       <p>Album:</p>
       <input
         class="input"
@@ -99,10 +100,31 @@
       can't be empty
     </p>
 
-    <div class="section"></div>
-    <p>BPM: {{ song.bpm }}</p>
-    <p>Duracion: {{ song.length }}</p>
-    <p>Genero: {{ song.genre }}</p>
+    <div class="sections">
+      <p>BPM:</p>
+      <input 
+        class="input"
+        type="text"
+        placeholder="{{ song.bpm }}"
+      />
+    </div>
+
+    <div class="sections">
+      <p>Duracion:</p>
+      <input 
+        class="input"
+        type="text"
+        placeholder="{{ song.length }}"
+      />
+    </div>
+    <div class="sections">
+      <p>Genero:</p>
+      <input 
+        class="input"
+        type="text"
+        placeholder="{{ song.genre }}"
+      />
+    </div>
   </mat-list-item>
 </form>
 

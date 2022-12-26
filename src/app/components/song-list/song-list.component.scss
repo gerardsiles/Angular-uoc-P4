@@ -25,6 +25,8 @@ $black: black;
 .new-releases {
   background-color: $dark-gray;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
 
   &__title {
@@ -45,8 +47,9 @@ $black: black;
     display: flex;
     align-items: center;
     align-content: center;
-    margin-left: 55%;
-    transform: translateX(-50%);
+    margin-left: 5%;
+    padding-left: 18.75px;
+   
     // margin-bottom: 15px;
   }
 
