@@ -29,7 +29,7 @@
 }
 
 .volume-icon {
-  transform: scale(0.5);
+  transform: scale(0.9);
 }
 
 .volume-slider {
@@ -37,9 +37,23 @@
 }
 
 .material-icons {
-  height: 30px;
-  width: 30px;
-  font-size: 30px;
+  height: 36px;
+  width: 36px;
+  font-size: 36px;
+}
+
+.play-button {
+  margin-top: -265px;
+  margin-left: 160px;
+  z-index: 10;
+  margin-bottom: 225px;
+  transition: all 0.5s;
+}
+.play-button:hover {
+  background-color: grey;
+}
+play-button:active {
+  background-color: blue;
 }
 
 .play {
@@ -50,4 +64,12 @@
 
 .material-icons:hover {
   cursor: pointer;
+}
+
+.show-text {
+  visibility: visible;
+}
+
+.hide-text {
+  visibility: hidden;
 }
