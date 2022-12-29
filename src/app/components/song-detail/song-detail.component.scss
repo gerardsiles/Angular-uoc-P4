@@ -49,39 +49,27 @@ input[type="text"] {
   }
 }
 
-/*.section {
- //  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  padding: 1px;
+.info{
+  margin-top: -30px;
 }
 
-.section input {
- //  margin-top: 3px;
- margin:0;
- padding: 0;
-}*/
+.play-button {
+  top: -50px;
+  margin-left: 180px;
+  z-index: 10;
+  transition: all 0.5s;
+}
+.play-button:hover {
+  background-color: grey;
+}
+
 .sections p {
- // align-items: center;
-  //align-content: center;
   margin-right: 5px;
   margin:0;
   padding: 0;
   margin-left: 5px;
 }
-/*
-.section mat-icon {
- //  position: absolute;
-  left: 0px;
-  transform: scale(0.7);
-  margin-right: 8px;
-}
 
-.section mat-icon:hover {
-  cursor: pointer;
-} */
 .input {
   width: auto;
   font-weight: 5px;
@@ -89,8 +77,6 @@ input[type="text"] {
   outline: none;
   border-radius: 25px;
   margin-left: 3px;
- // margin-bottom: 5px;
- // padding: 0 10px;
   align-items: center;
   align-content: center;
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -42,6 +42,9 @@ export class SongComponent implements OnInit {
     ]),
   });
 
+  @Output()
+  playClicked: EventEmitter<string> = new EventEmitter<string>();
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private location: Location,
@@ -50,6 +53,10 @@ export class SongComponent implements OnInit {
 
   ngOnInit(): void {
     this.getActivatedRoute();
+  }
+
+  public handlePlay(): void {
+    this.playClicked.emit('Play clicked');
   }
 
   // get song title from active route
