@@ -1,5 +1,4 @@
 <div class="player"> 
-  <button mat-flat-button class="play-button" color="accent" (click)="playStream()">Play</button>
   
     <h3 class="hide-text" [ngClass]="state.playing || state.paused ? 'show-text' : 'hide-text'" class="now-playing">
     Now playing: {{ state.songTitle }}

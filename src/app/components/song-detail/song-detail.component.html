@@ -1,129 +1,130 @@
 <form [formGroup]="songSection">
   <mat-list-item class="song-detail" *ngIf="song">
     <img src="{{ song.cover }}" alt="Portada album" />
+    <button mat-flat-button class="play-button" color="accent" (click)="handlePlay()">Play</button>
+    <div class="info">
+      <div class="sections">
+        
+        <p>Titulo:</p>
 
-    <div class="sections">
-      
-      <p>Titulo:</p>
+        <input
+          class="input"
+          type="text"
+          formControlName="title"
+          placeholder="{{ song.title }}"
+          [disabled]="editable"
+          required
+        />
 
-      <input
-        class="input"
-        type="text"
-        formControlName="title"
-        placeholder="{{ song.title }}"
-        [disabled]="editable"
-        required
-      />
+        <mat-icon
+          color="{{ editableTitle ? 'accent' : 'primary' }}"
+          (click)="editSongTitle()"
+          >edit</mat-icon
+        >
+      </div>
 
-      <mat-icon
-        color="{{ editableTitle ? 'accent' : 'primary' }}"
-        (click)="editSongTitle()"
-        >edit</mat-icon
-      >
-    </div>
+      <p *ngIf="title && title.invalid && editableTitle" class="error">
+        can't be empty
+      </p>
 
-    <p *ngIf="title && title.invalid && editableTitle" class="error">
-      can't be empty
-    </p>
+      <div class="sections">
+        <p>Autor:</p>
+        <input
+          class="input"
+          type="text"
+          formControlName="author"
+          placeholder="{{ song.author }}"
+          [disabled]="editable"
+          required
+        />
+        <mat-icon
+          color="{{ editableAuthor ? 'accent' : 'primary' }}"
+          (click)="editSongAuthor()"
+          >edit</mat-icon
+        >
+      </div>
+      <p *ngIf="author && author.invalid && editableAuthor" class="error">
+        can't be empty
+      </p>
 
-    <div class="sections">
-      <p>Autor:</p>
-      <input
-        class="input"
-        type="text"
-        formControlName="author"
-        placeholder="{{ song.author }}"
-        [disabled]="editable"
-        required
-      />
-      <mat-icon
-        color="{{ editableAuthor ? 'accent' : 'primary' }}"
-        (click)="editSongAuthor()"
-        >edit</mat-icon
-      >
-    </div>
-    <p *ngIf="author && author.invalid && editableAuthor" class="error">
-      can't be empty
-    </p>
+      <div class="sections">
+        <p>Grupo:</p>
+        <input
+          class="input"
+          type="text"
+          formControlName="group"
+          placeholder="{{ song.group }}"
+        />
+        <mat-icon
+          color="{{ editableGroup ? 'accent' : 'primary' }}"
+          (click)="editSongGroup()"
+          >edit</mat-icon
+        >
+      </div>
+      <p *ngIf="group && group.invalid && editableGroup" class="error">
+        can't be empty
+      </p>
 
-    <div class="sections">
-      <p>Grupo:</p>
-      <input
-        class="input"
-        type="text"
-        formControlName="group"
-        placeholder="{{ song.group }}"
-      />
-      <mat-icon
-        color="{{ editableGroup ? 'accent' : 'primary' }}"
-        (click)="editSongGroup()"
-        >edit</mat-icon
-      >
-    </div>
-    <p *ngIf="group && group.invalid && editableGroup" class="error">
-      can't be empty
-    </p>
+      <div class="sections">
+        <p>Ano:</p>
+        <input
+          class="input"
+          type="text"
+          formControlName="year"
+          placeholder="{{ song.year }}"
+        />
+        <mat-icon
+          color="{{ editableYear ? 'accent' : 'primary' }}"
+          (click)="editSongYear()"
+          >edit</mat-icon
+        >
+      </div>
+      <p *ngIf="year && year.invalid && editableYear" class="error">
+        can't be empty
+      </p>
 
-    <div class="sections">
-      <p>Ano:</p>
-      <input
-        class="input"
-        type="text"
-        formControlName="year"
-        placeholder="{{ song.year }}"
-      />
-      <mat-icon
-        color="{{ editableYear ? 'accent' : 'primary' }}"
-        (click)="editSongYear()"
-        >edit</mat-icon
-      >
-    </div>
-    <p *ngIf="year && year.invalid && editableYear" class="error">
-      can't be empty
-    </p>
+      <div class="sections">
+        <p>Album:</p>
+        <input
+          class="input"
+          type="text"
+          formControlName="album"
+          placeholder=" {{ song.album }}"
+        />
+        <mat-icon
+          color="{{ editableAlbum ? 'accent' : 'primary' }}"
+          (click)="editSongAlbum()"
+          >edit</mat-icon
+        >
+      </div>
+      <p *ngIf="album && album.invalid && editableAlbum" class="error">
+        can't be empty
+      </p>
 
-    <div class="sections">
-      <p>Album:</p>
-      <input
-        class="input"
-        type="text"
-        formControlName="album"
-        placeholder=" {{ song.album }}"
-      />
-      <mat-icon
-        color="{{ editableAlbum ? 'accent' : 'primary' }}"
-        (click)="editSongAlbum()"
-        >edit</mat-icon
-      >
-    </div>
-    <p *ngIf="album && album.invalid && editableAlbum" class="error">
-      can't be empty
-    </p>
-
-    <div class="sections">
-      <p>BPM:</p>
-      <input 
-        class="input"
-        type="text"
-        placeholder="{{ song.bpm }}"
-      />
-    </div>
-
-    <div class="sections">
-      <p>Duracion:</p>
-      <input 
-        class="input"
-        type="text"
-        placeholder="{{ song.length }}"
-      />
-    </div>
-    <div class="sections">
-      <p>Genero:</p>
-      <input 
-        class="input"
-        type="text"
-        placeholder="{{ song.genre }}"
-      />
+      <div class="sections">
+        <p>BPM:</p>
+        <input 
+          class="input"
+          type="text"
+          placeholder="{{ song.bpm }}"
+        />
+      </div>
+      <div class="sections">
+        <p>Duracion:</p>
+        <input 
+          class="input"
+          type="text"
+          placeholder="{{ song.length }}"
+        />
+      </div>
+      <div class="sections">
+        <p>Genero:</p>
+        <input 
+          class="input"
+          type="text"
+          placeholder="{{ song.genre }}"
+        />
+      </div>
     </div>
   </mat-list-item>
 </form>
