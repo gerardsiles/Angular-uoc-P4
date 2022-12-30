@@ -2,9 +2,8 @@
   <mat-list-item class="song-detail" *ngIf="song">
     <img src="{{ song.cover }}" alt="Portada album" />
     <button mat-flat-button class="play-button" color="accent" (click)="handlePlay()">Play</button>
-    <div class="info">
       <div class="sections">
-        
+
         <p>Titulo:</p>
 
         <input
@@ -89,7 +88,7 @@
           class="input"
           type="text"
           formControlName="album"
-          placeholder=" {{ song.album }}"
+          placeholder="{{ song.album }}"
         />
         <mat-icon
           color="{{ editableAlbum ? 'accent' : 'primary' }}"
@@ -103,7 +102,7 @@
 
       <div class="sections">
         <p>BPM:</p>
-        <input 
+        <input
           class="input"
           type="text"
           placeholder="{{ song.bpm }}"
@@ -111,7 +110,7 @@
       </div>
       <div class="sections">
         <p>Duracion:</p>
-        <input 
+        <input
           class="input"
           type="text"
           placeholder="{{ song.length }}"
@@ -119,13 +118,12 @@
       </div>
       <div class="sections">
         <p>Genero:</p>
-        <input 
+        <input
           class="input"
           type="text"
           placeholder="{{ song.genre }}"
         />
       </div>
-    </div>
   </mat-list-item>
 </form>
 
