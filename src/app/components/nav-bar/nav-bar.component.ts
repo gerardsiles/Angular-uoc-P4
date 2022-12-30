@@ -4,6 +4,7 @@ import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddSongComponent } from '../add-song/add-song.component';
+import { EditSongInfoComponent } from '../edit-song-info/edit-song-info.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -25,6 +26,15 @@ export class NavBarComponent implements OnInit {
     exitAnimationDuration: string
   ): void {
     this.dialog.open(AddSongComponent, {
+      width: '400px',
+    });
+  }
+  // Add song Dialog
+  openEditDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(EditSongInfoComponent, {
       width: '400px',
     });
   }

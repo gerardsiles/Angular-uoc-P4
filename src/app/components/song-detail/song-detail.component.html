@@ -1,136 +1,119 @@
 <form [formGroup]="songSection">
   <mat-list-item class="song-detail" *ngIf="song">
     <img src="{{ song.cover }}" alt="Portada album" />
-    <button mat-flat-button class="play-button" color="accent" (click)="handlePlay()">Play</button>
-      <div class="sections">
+    <button
+      mat-flat-button
+      class="play-button"
+      color="accent"
+      (click)="handlePlay()"
+    >
+      Play
+    </button>
+    <div class="sections">
+      <p>Titulo:</p>
 
-        <p>Titulo:</p>
+      <input
+        class="input"
+        type="text"
+        formControlName="title"
+        placeholder="{{ song.title }}"
+        value="{{ song.title }}"
+        (click)="setEditing()"
+        required
+      />
+    </div>
 
-        <input
-          class="input"
-          type="text"
-          formControlName="title"
-          placeholder="{{ song.title }}"
-          [disabled]="editable"
-          required
-        />
+    <p *ngIf="title && title.invalid" class="error">can't be empty</p>
 
-        <mat-icon
-          color="{{ editableTitle ? 'accent' : 'primary' }}"
-          (click)="editSongTitle()"
-          >edit</mat-icon
-        >
-      </div>
+    <div class="sections">
+      <p>Autor:</p>
 
-      <p *ngIf="title && title.invalid && editableTitle" class="error">
-        can't be empty
-      </p>
+      <input
+        class="input"
+        type="text"
+        formControlName="author"
+        placeholder="{{ song.author }}"
+        value="{{ song.author }}"
+        required
+        (click)="setEditing()"
+      />
+    </div>
 
-      <div class="sections">
-        <p>Autor:</p>
-        <input
-          class="input"
-          type="text"
-          formControlName="author"
-          placeholder="{{ song.author }}"
-          [disabled]="editable"
-          required
-        />
-        <mat-icon
-          color="{{ editableAuthor ? 'accent' : 'primary' }}"
-          (click)="editSongAuthor()"
-          >edit</mat-icon
-        >
-      </div>
-      <p *ngIf="author && author.invalid && editableAuthor" class="error">
-        can't be empty
-      </p>
+    <p *ngIf="author && author.invalid" class="error">can't be empty</p>
 
-      <div class="sections">
-        <p>Grupo:</p>
-        <input
-          class="input"
-          type="text"
-          formControlName="group"
-          placeholder="{{ song.group }}"
-        />
-        <mat-icon
-          color="{{ editableGroup ? 'accent' : 'primary' }}"
-          (click)="editSongGroup()"
-          >edit</mat-icon
-        >
-      </div>
-      <p *ngIf="group && group.invalid && editableGroup" class="error">
-        can't be empty
-      </p>
+    <div class="sections">
+      <p>Grupo:</p>
 
-      <div class="sections">
-        <p>Ano:</p>
-        <input
-          class="input"
-          type="text"
-          formControlName="year"
-          placeholder="{{ song.year }}"
-        />
-        <mat-icon
-          color="{{ editableYear ? 'accent' : 'primary' }}"
-          (click)="editSongYear()"
-          >edit</mat-icon
-        >
-      </div>
-      <p *ngIf="year && year.invalid && editableYear" class="error">
-        can't be empty
-      </p>
+      <input
+        class="input"
+        type="text"
+        formControlName="group"
+        placeholder="{{ song.group }}"
+        value="{{ song.group }}"
+        required
+        (click)="setEditing()"
+      />
+    </div>
+    <p *ngIf="group && group.invalid" class="error">can't be empty</p>
 
-      <div class="sections">
-        <p>Album:</p>
-        <input
-          class="input"
-          type="text"
-          formControlName="album"
-          placeholder="{{ song.album }}"
-        />
-        <mat-icon
-          color="{{ editableAlbum ? 'accent' : 'primary' }}"
-          (click)="editSongAlbum()"
-          >edit</mat-icon
-        >
-      </div>
-      <p *ngIf="album && album.invalid && editableAlbum" class="error">
-        can't be empty
-      </p>
+    <div class="sections">
+      <p>Genero:</p>
+      <input
+        class="input"
+        type="text"
+        formControlName="genre"
+        placeholder="{{ song.genre }}"
+        value="{{ song.genre }}"
+        required
+        (click)="setEditing()"
+      />
+      <p *ngIf="genre && genre.invalid" class="error">can't be empty</p>
+    </div>
 
-      <div class="sections">
-        <p>BPM:</p>
-        <input
-          class="input"
-          type="text"
-          placeholder="{{ song.bpm }}"
-        />
-      </div>
-      <div class="sections">
-        <p>Duracion:</p>
-        <input
-          class="input"
-          type="text"
-          placeholder="{{ song.length }}"
-        />
-      </div>
-      <div class="sections">
-        <p>Genero:</p>
-        <input
-          class="input"
-          type="text"
-          placeholder="{{ song.genre }}"
-        />
-      </div>
+    <div class="sections">
+      <p>Album:</p>
+      <input
+        class="input"
+        type="text"
+        formControlName="album"
+        placeholder="{{ song.album }}"
+        value="{{ song.album }}"
+        required
+        (click)="setEditing()"
+      />
+    </div>
+    <p *ngIf="album && album.invalid" class="error">can't be empty</p>
+
+    <div class="sections">
+      <p>BPM:</p>
+      <input
+        class="input"
+        type="text"
+        placeholder="{{ song.bpm }}"
+        value="{{ song.bpm }}"
+        disabled
+      />
+    </div>
+    <div class="sections">
+      <p>Duracion:</p>
+      <input
+        class="input"
+        type="text"
+        placeholder="{{ song.length }}"
+        disabled
+      />
+    </div>
+
+    <div class="sections">
+      <p>Ano:</p>
+      <input class="input" type="text" placeholder="{{ song.year }}" disabled />
+    </div>
+    <p *ngIf="year && year.invalid" class="error">can't be empty</p>
   </mat-list-item>
 </form>
 
 <button
-  *ngIf="
-    title?.valid || author?.valid || group?.valid || year?.valid || album?.valid
-  "
+  *ngIf="editing"
   mat-raised-button
   color="primary"
   class="btn"
@@ -139,13 +122,7 @@
   Confirmar cambios
 </button>
 <button
-  *ngIf="
-    editableTitle ||
-    editableAuthor ||
-    editableGroup ||
-    editableYear ||
-    editableAlbum
-  "
+  *ngIf="editing"
   mat-raised-button
   color="primary"
   class="btn"

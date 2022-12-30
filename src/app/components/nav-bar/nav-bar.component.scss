@@ -67,6 +67,23 @@ li.active {
 }
 
 .add-song-item {
+  margin-right: 0.5rem;
+}
+
+.edit-song {
+  display: flex;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.edit-song p {
+  margin-right: 0.5rem;
+}
+
+.edit-song:hover {
+  cursor: pointer;
 }
 
 /* Desktop Aside */

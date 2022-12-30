@@ -19,7 +19,11 @@
   </div>
 
   <div *ngIf="displaySong" class="song-player">
-    <app-song-detail (playClicked)="appPlayer.playStream()" [song]="song"></app-song-detail>
+    <app-song-detail
+      (playClicked)="appPlayer.playStream()"
+      [song]="song"
+    ></app-song-detail>
+
     <app-player #appPlayer [song]="song"></app-player>
   </div>
 </aside>
